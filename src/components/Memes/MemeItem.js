@@ -3,9 +3,11 @@ import React from 'react';
 import MemeDate from './MemeDate';
 import Card from '../UI/Card'
 import './MemeItem.css';
-import UpvoteBtn from '../Buttons/UpvoteBtn';
+import LikeDislike from '../Buttons/LikeDislike';
+
 
 const MemeItem = (props) => {
+    console.log(props.upvotes)
   return (
     <Card className="meme">
       <MemeDate date={props.date}/>
@@ -14,7 +16,11 @@ const MemeItem = (props) => {
         <div className="meme__img">{props.amount}</div>
       </div>
     <div className="meme__img">{props.count}</div>
-    <UpvoteBtn count={props.count}/>
+    <LikeDislike 
+    date={props.date}
+    upvotes={props.upvotes}
+    downvotes={props.downvotes}
+    />
     <div className="meme__img">{props.downvotes}</div>
     </Card>
   );

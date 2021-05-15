@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/stare-memy/static/css/main.ac2aeed0.chunk.css",
+    "main.js": "/stare-memy/static/js/main.cfb2608c.chunk.js",
+    "main.js.map": "/stare-memy/static/js/main.cfb2608c.chunk.js.map",
+    "runtime-main.js": "/stare-memy/static/js/runtime-main.8d7bf3f8.js",
+    "runtime-main.js.map": "/stare-memy/static/js/runtime-main.8d7bf3f8.js.map",
+    "static/js/2.2e93345e.chunk.js": "/stare-memy/static/js/2.2e93345e.chunk.js",
+    "static/js/2.2e93345e.chunk.js.map": "/stare-memy/static/js/2.2e93345e.chunk.js.map",
+    "static/js/3.75fd8b5d.chunk.js": "/stare-memy/static/js/3.75fd8b5d.chunk.js",
+    "static/js/3.75fd8b5d.chunk.js.map": "/stare-memy/static/js/3.75fd8b5d.chunk.js.map",
+    "index.html": "/stare-memy/index.html",
+    "static/css/main.ac2aeed0.chunk.css.map": "/stare-memy/static/css/main.ac2aeed0.chunk.css.map",
+    "static/js/2.2e93345e.chunk.js.LICENSE.txt": "/stare-memy/static/js/2.2e93345e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8d7bf3f8.js",
+    "static/js/2.2e93345e.chunk.js",
+    "static/css/main.ac2aeed0.chunk.css",
+    "static/js/main.cfb2608c.chunk.js"
+  ]
+}

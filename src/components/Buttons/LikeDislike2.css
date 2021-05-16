@@ -1,0 +1,34 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn {
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0;
+    padding: 0px 20px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #74777d;
+    background-color: transparent;
+    outline: none;
+  }  
+  
+  button:first-of-type {
+    border-right: 2px solid #74777d;
+  }
+  
+  .btn:hover {
+      color: #282a2e;
+  }
+    
+  .active, .active:hover {
+      color: #1b81f5;
+  }
+  
+  span {
+    margin-left: 6px;
+  }

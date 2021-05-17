@@ -1,11 +1,9 @@
 import React from 'react';
 
-import meme1 from '../../images/brian.jpg';
-
-const Image = () => {
+const Image = (props) => {
     return (
         <div>
-            <img src={meme1} alt=""/>
+            <img src={props.amount} alt=""/>
         </div>
     )
 }

@@ -1,9 +1,13 @@
 import React, { useState, useReducer} from 'react';
 
-const initialState = {
-  likes: 10,
-  dislikes: 5
+import DUMMY_MEMES from '../Memes/DUMMY_MEMES'
+
+const initialState  = {
+  likes: DUMMY_MEMES.upvotes,
+  dislikes: DUMMY_MEMES.downvotes
 }
+console.log(DUMMY_MEMES.upvotes);
+console.log(DUMMY_MEMES.downvotes);
 
 const appReducer = (state, action) => {
   switch(action.type) {

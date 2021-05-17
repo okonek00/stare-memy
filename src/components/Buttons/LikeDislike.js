@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 };
 
 const LikeDislike = (props) => {
-
+this.setState()
   const [state, dispatch] = useReducer(reducer, initialState);
   const { like=props.upvotes, dislikes=props.downvotes, active } = state;
   return (

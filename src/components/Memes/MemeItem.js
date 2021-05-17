@@ -4,6 +4,7 @@ import MemeDate from './MemeDate';
 import Card from '../UI/Card'
 import './MemeItem.css';
 import LikeDislike2 from '../Buttons/LikeDislike2';
+import Image from './Image';
 
 
 const MemeItem = (props) => {
@@ -13,10 +14,11 @@ const MemeItem = (props) => {
       <MemeDate date={props.date}/>
       <div className="meme__description">
         <h2>{props.title}</h2>
-        <div className="meme__img">{props.amount}</div>
+        <Image amount={props.amount} />
       </div>
     <LikeDislike2 
     date={props.date}
+    key={props.id}
     upvotes={props.upvotes}
     downvotes={props.downvotes}
     />

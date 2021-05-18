@@ -8,7 +8,6 @@ import Image from './Image';
 
 
 const MemeItem = (props) => {
-    console.log(props.upvotes)
   return (
     <Card className="meme">
       <MemeDate date={props.date}/>

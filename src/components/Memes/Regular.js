@@ -12,8 +12,8 @@ const Memes = (props) => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredMemes = props.items.filter(meme => {
-      return meme.date.getFullYear().toString() === filteredYear;
+  const filteredMemes = props.items.filter((meme) => {
+    return meme.date.getFullYear().toString() === filteredYear;
   });
 
   return (
@@ -27,7 +27,7 @@ const Memes = (props) => {
           <MemeItem
             key={meme.id}
             title={meme.title}
-            amount={meme.amount}
+            img={meme.img}
             date={meme.date}
             upvotes={meme.upvotes}
             downvotes={meme.downvotes}

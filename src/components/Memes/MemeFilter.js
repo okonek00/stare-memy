@@ -1,23 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import './MemeFilter.css';
+import "./MemeFilter.css";
 
 const MemeFilter = (props) => {
-    const dropdownChangeHandler = (event) => {
-        props.onChangeFilter(event.target.value)
-    };
-
+  const dropdownChangeHandler = (event) => {
+    props.onChangeFilter(event.target.value);
+  };
 
   return (
-    <div className='meme-filter'>
-      <div className='meme-filter__control'>
-        <label>Filter by year</label>
+    <div className="meme-filter">
+      <div className="meme-filter__control">
+        <label>Filtruj po dacie dodania</label>
         <select value={props.selected} onChange={dropdownChangeHandler}>
-          <option value=''>Wszystko</option>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
-          <option value='2020'>2020</option>
-          <option value='2019'>2019</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
         </select>
       </div>
     </div>

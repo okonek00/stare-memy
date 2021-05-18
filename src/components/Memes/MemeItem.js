@@ -1,28 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import MemeDate from './MemeDate';
-import Card from '../UI/Card'
-import './MemeItem.css';
-import LikeDislike2 from '../Buttons/LikeDislike2';
-import Image from './Image';
-
+import MemeDate from "./MemeDate";
+import Card from "../UI/Card";
+import "./MemeItem.css";
+import LikeDislike2 from "../Buttons/LikeDislike2";
+import Image from "./Image";
 
 const MemeItem = (props) => {
   return (
     <Card className="meme">
-      <MemeDate date={props.date}/>
+      <MemeDate date={props.date} />
       <div className="meme__description">
         <h2>{props.title}</h2>
-        <Image amount={props.amount} />
+        <Image img={props.img} />
       </div>
-    <LikeDislike2 
-    date={props.date}
-    key={props.id}
-    upvotes={props.upvotes}
-    downvotes={props.downvotes}
-    />
+      <LikeDislike2
+        date={props.date}
+        key={props.id}
+        upvotes={props.upvotes}
+        downvotes={props.downvotes}
+      />
     </Card>
   );
-}
+};
 
 export default MemeItem;

@@ -6,14 +6,14 @@ import "./Memes.css";
 import MemeFilter from "./MemeFilter";
 
 const Memes = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2021");
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredMemes = props.items.filter(meme => {
-      return meme.date.getFullYear().toString() === filteredYear;
+  const filteredMemes = props.items.filter((meme) => {
+    return meme.date.getFullYear().toString() === filteredYear;
   });
 
   return (
@@ -22,23 +22,20 @@ const Memes = (props) => {
         <MemeFilter
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
-          count={props.count}
         />
         {filteredMemes.map((meme) => (
           <MemeItem
             key={meme.id}
             title={meme.title}
-            amount={meme.amount}
+            img={meme.img}
             date={meme.date}
             upvotes={meme.upvotes}
             downvotes={meme.downvotes}
           />
-
         ))}
-      </Card>;
+      </Card>
+      ;
     </div>
-
-   
   );
 };
 

@@ -1,21 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import MemeForm from './MemeForm'
+import MemeForm from "./MemeForm";
 
-import './NewMeme.css';
+import "./NewMeme.css";
 
 const NewMeme = (props) => {
-
-    const saveMemeDataHandler = (enteredMemeData) => {
-        const memeData = {
-            ...enteredMemeData,
-            id: Math.random().toString()
-        };
-        props.onAddMeme(memeData);
+  const saveMemeDataHandler = (enteredMemeData) => {
+    const memeData = {
+      ...enteredMemeData,
+      id: Math.random().toString(),
     };
-return <div className='new-meme'>
-        <MemeForm onSaveMemeData={saveMemeDataHandler}/>
+    props.onAddMeme(memeData);
+  };
+  return (
+    <div className="new-meme">
+      <MemeForm onSaveMemeData={saveMemeDataHandler} />
     </div>
+  );
 };
 
 export default NewMeme;

@@ -8,7 +8,7 @@ const MemeForm = (props) => {
     setEnteredTitle(event.target.value);
   };
 
-  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredURL, setEnteredAmount] = useState("");
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
   };
@@ -23,21 +23,21 @@ const MemeForm = (props) => {
 
     const memeData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: enteredURL,
       date: new Date(enteredDate),
     };
 
     props.onSaveMemeData(memeData);
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-meme__controls">
         <div className="new-meme__control">
-          <label>Title</label>
+          <label>Tytuł</label>
           <input
             type="text"
             value={enteredTitle}
@@ -45,17 +45,15 @@ const MemeForm = (props) => {
           />
         </div>
         <div className="new-meme__control">
-          <label>Amount</label>
+          <label>URL</label>
           <input
-            type="number"
-            min="0.01"
-            step="0.01"
-            value={enteredAmount}
+            type="text"
+            value={enteredURL}
             onChange={amountChangeHandler}
           />
         </div>
         <div className="new-meme__control">
-          <label>Date</label>
+          <label>Data dodania</label>
           <input
             type="date"
             min="2020-01-01"
@@ -66,7 +64,7 @@ const MemeForm = (props) => {
         </div>
       </div>
       <div className="new-meme_actions">
-        <button type="submit">Add Meme</button>
+        <button type="submit">Dodaj Meme</button>
       </div>
     </form>
   );

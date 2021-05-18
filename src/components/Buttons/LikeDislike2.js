@@ -1,95 +1,97 @@
-import React, { useState, useReducer} from 'react';
+import React, { useState, useReducer } from "react";
 
-import DUMMY_MEMES from '../Memes/DUMMY_MEMES';
+import DUMMY_MEMES from "../Memes/DUMMY_MEMES";
 
-const initialState  = {
+const initialState = {
   likes: DUMMY_MEMES[0].upvotes,
   dislikes: DUMMY_MEMES[0].downvotes,
-}
-
-console.log(DUMMY_MEMES)
-
+};
 
 const appReducer = (state, action) => {
-  switch(action.type) {
-    case 'HANDLE_LIKE':
+  switch (action.type) {
+    case "HANDLE_LIKE":
       return {
         ...state,
-        likes: state.likes + action.payload
-      }
-    case 'HANDLE_DISLIKE':
+        likes: state.likes + action.payload,
+      };
+    case "HANDLE_DISLIKE":
       return {
         ...state,
-        dislikes: state.dislikes + action.payload
-      }
+        dislikes: state.dislikes + action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 const LikeDislike2 = () => {
-  const [state, dispatch] = useReducer(appReducer, initialState)
-  const { likes, dislikes } = state
-  const [status, setStatus] = useState(null)
-  
+  const [state, dispatch] = useReducer(appReducer, initialState);
+  const { likes, dislikes } = state;
+  const [status, setStatus] = useState(null);
+
   const handleClickLike = () => {
-    if (status==='like') {
-      setStatus(null)
+    if (status === "like") {
+      setStatus(null);
       dispatch({
-        type: 'HANDLE_LIKE',
+        type: "HANDLE_LIKE",
         payload: -1,
-      })
+      });
     } else {
-      setStatus('like')
-      if (status==='dislike') {
+      setStatus("like");
+      if (status === "dislike") {
         dispatch({
-          type: 'HANDLE_DISLIKE',
+          type: "HANDLE_DISLIKE",
           payload: -1,
-        })
+        });
       }
       dispatch({
-        type: 'HANDLE_LIKE',
+        type: "HANDLE_LIKE",
         payload: 1,
-      })
+      });
     }
-  }
-  
+  };
+
   const handleClickDislike = () => {
-    if (status==='dislike') {
-      setStatus(null)
+    if (status === "dislike") {
+      setStatus(null);
       dispatch({
-        type: 'HANDLE_DISLIKE',
+        type: "HANDLE_DISLIKE",
         payload: -1,
-      })
+      });
     } else {
-      setStatus('dislike')
-      if (status==='like') {
+      setStatus("dislike");
+      if (status === "like") {
         dispatch({
-          type: 'HANDLE_LIKE',
+          type: "HANDLE_LIKE",
           payload: -1,
-        })
+        });
       }
       dispatch({
-        type: 'HANDLE_DISLIKE',
+        type: "HANDLE_DISLIKE",
         payload: 1,
-      })
+      });
     }
-  }
-  
+  };
+
   return (
-    <div className='container'>  
-      <button className={status==='like'? 'btn active' : 'btn'} onClick={handleClickLike}> 
-        Like 
+    <div className="container">
+      <button
+        className={status === "like" ? "btn active" : "btn"}
+        onClick={handleClickLike}
+      >
+        Like
         <span>{likes}</span>
       </button>
-      
-      <button className={status==='dislike'? 'btn active' : 'btn'} onClick={handleClickDislike}> 
-        Dislike 
+
+      <button
+        className={status === "dislike" ? "btn active" : "btn"}
+        onClick={handleClickDislike}
+      >
+        Dislike
         <span>{dislikes}</span>
       </button>
     </div>
-  )
-  
-}
+  );
+};
 
-export default LikeDislike2
+export default LikeDislike2;

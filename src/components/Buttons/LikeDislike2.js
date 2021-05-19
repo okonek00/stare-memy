@@ -1,5 +1,7 @@
 import React, { useState, useReducer } from "react";
 
+import './LikeDislike2.css'
+
 import DUMMY_MEMES from "../Memes/DUMMY_MEMES";
 
 const initialState = {
@@ -76,7 +78,7 @@ const LikeDislike2 = () => {
   return (
     <div className="container">
       <button
-        className={status === "like" ? "btn active" : "btn"}
+        className={status === "like" ? "btnlike active" : "btnlike"}
         onClick={handleClickLike}
       >
         Like
@@ -84,7 +86,7 @@ const LikeDislike2 = () => {
       </button>
 
       <button
-        className={status === "dislike" ? "btn active" : "btn"}
+        className={status === "dislike" ? "btnlike active" : "btndislike"}
         onClick={handleClickDislike}
       >
         Dislike

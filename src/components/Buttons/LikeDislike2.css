@@ -1,18 +1,29 @@
 .container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.btn {
+.btnlike {
   cursor: pointer;
   box-sizing: border-box;
   border: 0;
-  padding: 0px 20px;
+  padding: 0px 5px;
   font-size: 18px;
   line-height: 30px;
-  color: #74777d;
+  color: #00b818;
+  background-color: transparent;
+  outline: none;
+}
+
+.btndislike {
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0px 5px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #cc0000;
   background-color: transparent;
   outline: none;
 }
@@ -21,13 +32,17 @@ button:first-of-type {
   border-right: 2px solid #74777d;
 }
 
-.btn:hover {
-  color: #282a2e;
+.btnlike:hover {
+  color: #017531;
+}
+
+.btndislike:hover {
+  color: #7c0000;
 }
 
 .active,
 .active:hover {
-  color: #1b81f5;
+  color: #969696;
 }
 
 span {

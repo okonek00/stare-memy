@@ -1,78 +1,16 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 
 import './LikeDislike2.css'
 
-import DUMMY_MEMES from "../Memes/DUMMY_MEMES";
-
-const initialState = {
-  likes: DUMMY_MEMES[0].upvotes,
-  dislikes: DUMMY_MEMES[0].downvotes,
-};
-
-const appReducer = (state, action) => {
-  switch (action.type) {
-    case "HANDLE_LIKE":
-      return {
-        ...state,
-        likes: state.likes + action.payload,
-      };
-    case "HANDLE_DISLIKE":
-      return {
-        ...state,
-        dislikes: state.dislikes + action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-const LikeDislike2 = () => {
-  const [state, dispatch] = useReducer(appReducer, initialState);
-  const { likes, dislikes } = state;
-  const [status, setStatus] = useState(null);
+const LikeDislike2 = (props) => {
+  const [status] = useState(null);
 
   const handleClickLike = () => {
-    if (status === "like") {
-      setStatus(null);
-      dispatch({
-        type: "HANDLE_LIKE",
-        payload: -1,
-      });
-    } else {
-      setStatus("like");
-      if (status === "dislike") {
-        dispatch({
-          type: "HANDLE_DISLIKE",
-          payload: -1,
-        });
-      }
-      dispatch({
-        type: "HANDLE_LIKE",
-        payload: 1,
-      });
-    }
+    props.updateMemeVotes(props.id, "upvote");
   };
 
   const handleClickDislike = () => {
-    if (status === "dislike") {
-      setStatus(null);
-      dispatch({
-        type: "HANDLE_DISLIKE",
-        payload: -1,
-      });
-    } else {
-      setStatus("dislike");
-      if (status === "like") {
-        dispatch({
-          type: "HANDLE_LIKE",
-          payload: -1,
-        });
-      }
-      dispatch({
-        type: "HANDLE_DISLIKE",
-        payload: 1,
-      });
-    }
+    props.updateMemeVotes(props.id, "downvote");
   };
 
   return (
@@ -82,7 +20,7 @@ const LikeDislike2 = () => {
         onClick={handleClickLike}
       >
         Like
-        <span>{likes}</span>
+        <span>{props.upvotes}</span>
       </button>
 
       <button
@@ -90,7 +28,7 @@ const LikeDislike2 = () => {
         onClick={handleClickDislike}
       >
         Dislike
-        <span>{dislikes}</span>
+        <span>{props.downvotes}</span>
       </button>
     </div>
   );

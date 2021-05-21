@@ -1,10 +1,10 @@
 import React from "react";
 
-import MemeDate from "./MemeDate";
-import Card from "../UI/Card";
+import MemeDate from "../MemeDate/MemeDate";
+import Card from "../../UI/Card";
 import "./MemeItem.css";
-import LikeDislike2 from "../Buttons/LikeDislike2";
-import Image from "./Image";
+import LikeDislike2 from "../../Buttons/LikeDislike2";
+import Image from "../Image";
 
 const MemeItem = (props) => {
   return (
@@ -17,8 +17,10 @@ const MemeItem = (props) => {
       <LikeDislike2
         date={props.date}
         key={props.id}
+        id={props.id}
         upvotes={props.upvotes}
         downvotes={props.downvotes}
+        updateMemeVotes={props.updateMemeVotes}
       />
     </Card>
   );

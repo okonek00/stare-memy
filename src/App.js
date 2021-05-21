@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
-import Memes from "./components/Memes/Memes";
+import Memes from "./components/Memes/Memes/Memes";
 import NewMeme from "./components/NewMeme/NewMeme";
-import ErrorPage from "./components/ErrorPage";
-import Regular from "./components/Memes/Regular";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
+import Regular from "./components/Memes/Regular/Regular";
 import DUMMY_MEMES from "./components/Memes/DUMMY_MEMES";
 import Logo from "./components/Logo";
 
@@ -18,6 +18,21 @@ const App = () => {
       return [meme, ...prevMeme];
     });
   };
+
+  const updateMemeVotes = (memeId, voteType) => {
+    const updatedMemes = memes.map(meme => {
+      if (meme.id === memeId) {
+        if (voteType === 'upvote') {
+          meme.upvotes = meme.upvotes + 1
+        } else {
+          meme.downvotes = meme.downvotes + 1
+        }
+      }
+      return meme;
+    });
+
+    setMemes(updatedMemes);
+  }
 
   return (
     <div className="App">
@@ -45,10 +60,10 @@ const App = () => {
 
         <Switch>
           <Route exact path="/">
-            <Memes items={memes} />
+            <Memes items={memes} updateMemeVotes={updateMemeVotes} />
           </Route>
           <Route exact path="/regular">
-            <Regular items={memes} />
+            <Regular items={memes} updateMemeVotes={updateMemeVotes} />
           </Route>
           <Route exact path="/new">
             <NewMeme onAddMeme={addMemeHandler} />

@@ -22,3 +22,12 @@ li .Link {
 li .Link:hover {
   background-color: cornflowerblue;
 }
+
+li .selected {
+  background-color: rgb(60, 88, 141);
+}
+
+/* .active,
+.active:hover {
+  background-color: rgb(60, 88, 141);
+} */

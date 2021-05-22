@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 
 import Memes from "./components/Memes/Memes/Memes";
 import NewMeme from "./components/NewMeme/NewMeme";
@@ -37,29 +37,32 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Link to="/">
+        <NavLink to="/">
           <Logo />
-        </Link>
+        </NavLink>
         <ul className="NavBar">
           <li>
-            <Link className="Link" to="/">
+            <NavLink className="Link" activeClassName="selected" to="/natopie">
               NA TOPIE
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="Link" to="/regular">
+            <NavLink className="Link" activeClassName="selected" to="/regular">
               BEZ SZAŁU
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="Link" to="/new">
+            <NavLink className="Link" activeClassName="selected" to="/new">
               DODAJ STAREGO MEMA
-            </Link>
+            </NavLink>
           </li>
         </ul>
 
         <Switch>
-          <Route exact path="/">
+        <Route exact path="/">
+            <Memes items={memes} updateMemeVotes={updateMemeVotes} />
+          </Route>
+          <Route exact path="/natopie">
             <Memes items={memes} updateMemeVotes={updateMemeVotes} />
           </Route>
           <Route exact path="/regular">

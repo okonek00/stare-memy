@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import Memes from "./components/Memes/Memes/Memes";
 import NewMeme from "./components/NewMeme/NewMeme";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
-import Regular from "./components/Memes/Regular/Regular";
+
 import DUMMY_MEMES from "./components/Memes/DUMMY_MEMES";
 import Logo from "./components/Logo";
 
@@ -60,13 +60,13 @@ const App = () => {
 
         <Switch>
         <Route exact path="/">
-            <Memes items={memes} updateMemeVotes={updateMemeVotes} />
+            <Memes items={memes} isHot={true} updateMemeVotes={updateMemeVotes} render={<div className="naTopieMemes"/>} />
           </Route>
           <Route exact path="/natopie">
-            <Memes items={memes} updateMemeVotes={updateMemeVotes} />
+            <Memes items={memes} isHot={true} updateMemeVotes={updateMemeVotes} render={<div className="naTopieMemes"/>} />
           </Route>
           <Route exact path="/regular">
-            <Regular items={memes} updateMemeVotes={updateMemeVotes} />
+            <Memes items={memes} isHot={false} updateMemeVotes={updateMemeVotes} render={<div className="bezSzaluMemes"/>} />
           </Route>
           <Route exact path="/new">
             <NewMeme onAddMeme={addMemeHandler} />

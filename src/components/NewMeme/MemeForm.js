@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
+
 import "./MemeForm.css";
+
 
 const MemeForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -8,10 +10,23 @@ const MemeForm = (props) => {
     setEnteredTitle(event.target.value);
   };
 
-  const [enteredURL, setEnteredAmount] = useState("");
-  const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
-  };
+    const [image, setImage] = useState("");
+    const [url, setUrl] = useState("");
+    const uploadImage = () => {
+      const data = new FormData();
+      data.append("file", image);
+      data.append("upload_preset", "starememy");
+      data.append("cloud_name", "starememy");
+      fetch("https://api.cloudinary.com/v1_1/starememy/image/upload", {
+        method: "POST",
+        body: data,
+      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          setUrl(data.url);
+        })
+        .catch((err) => console.log(err));
+    };
 
   const [enteredDate, setEnteredDate] = useState("");
   const dateChangeHandler = (event) => {
@@ -23,13 +38,15 @@ const MemeForm = (props) => {
 
     const memeData = {
       title: enteredTitle,
-      amount: enteredURL,
+      img: url,
       date: new Date(enteredDate),
+      upvotes: 0,
+      downvotes: 0,
     };
 
     props.onSaveMemeData(memeData);
     setEnteredTitle("");
-    setEnteredAmount("");
+    setUrl("");
     setEnteredDate("");
   };
 
@@ -44,14 +61,14 @@ const MemeForm = (props) => {
             onChange={titleChangeHandler}
           />
         </div>
-        <div className="new-meme__control">
-          <label>URL</label>
-          <input
-            type="text"
-            value={enteredURL}
-            onChange={amountChangeHandler}
-          />
-        </div>
+            <div>
+      <div>
+        <input
+          type="file"
+          onChange={(e) => setImage(e.target.files[0])}
+        ></input>
+      </div>
+    </div>
         <div className="new-meme__control">
           <label>Data dodania</label>
           <input
@@ -64,7 +81,10 @@ const MemeForm = (props) => {
         </div>
       </div>
       <div className="new-meme_actions">
-        <button type="submit">Dodaj Meme</button>
+        <button type="submit" onClick={uploadImage}>Dodaj Meme</button>
+      </div>
+      <div>
+      <img src={url} alt="" />
       </div>
     </form>
   );

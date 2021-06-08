@@ -73,7 +73,7 @@ const MemeForm = (props) => {
           <label>Data dodania</label>
           <input
             type="date"
-            min="2020-01-01"
+            min="2000-01-01"
             max="2025-12-31"
             value={enteredDate}
             onChange={dateChangeHandler}

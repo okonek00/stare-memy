@@ -4,7 +4,7 @@ import MemeDate from "../MemeDate/MemeDate";
 import Card from "../../UI/Card";
 import "./MemeItem.css";
 import LikeDislike2 from "../../Buttons/LikeDislike2";
-import Image from "../Image";
+import Image from "../Image/Image";
 
 const MemeItem = (props) => {
   return (

@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import Memes from "./components/Memes/Memes/Memes";
 import NewMeme from "./components/NewMeme/NewMeme";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import Footer from "./components/Footer/footer";
 
 import DUMMY_MEMES from "./components/Memes/DUMMY_MEMES";
 import Logo from "./components/Logo";
@@ -20,19 +21,19 @@ const App = () => {
   };
 
   const updateMemeVotes = (memeId, voteType) => {
-    const updatedMemes = memes.map(meme => {
+    const updatedMemes = memes.map((meme) => {
       if (meme.id === memeId) {
-        if (voteType === 'upvote') {
-          meme.upvotes = meme.upvotes + 1
+        if (voteType === "upvote") {
+          meme.upvotes = meme.upvotes + 1;
         } else {
-          meme.downvotes = meme.downvotes + 1
+          meme.downvotes = meme.downvotes + 1;
         }
       }
       return meme;
     });
 
     setMemes(updatedMemes);
-  }
+  };
 
   return (
     <div className="App">
@@ -59,14 +60,29 @@ const App = () => {
         </ul>
 
         <Switch>
-        <Route exact path="/">
-            <Memes items={memes} isHot={true} updateMemeVotes={updateMemeVotes} render={<div className="naTopieMemes"/>} />
+          <Route exact path="/">
+            <Memes
+              items={memes}
+              isHot={true}
+              updateMemeVotes={updateMemeVotes}
+              render={<div className="naTopieMemes" />}
+            />
           </Route>
           <Route exact path="/natopie">
-            <Memes items={memes} isHot={true} updateMemeVotes={updateMemeVotes} render={<div className="naTopieMemes"/>} />
+            <Memes
+              items={memes}
+              isHot={true}
+              updateMemeVotes={updateMemeVotes}
+              render={<div className="naTopieMemes" />}
+            />
           </Route>
           <Route exact path="/regular">
-            <Memes items={memes} isHot={false} updateMemeVotes={updateMemeVotes} render={<div className="bezSzaluMemes"/>} />
+            <Memes
+              items={memes}
+              isHot={false}
+              updateMemeVotes={updateMemeVotes}
+              render={<div className="bezSzaluMemes" />}
+            />
           </Route>
           <Route exact path="/new">
             <NewMeme onAddMeme={addMemeHandler} />
@@ -74,6 +90,7 @@ const App = () => {
           <Route component={ErrorPage} />
         </Switch>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 };

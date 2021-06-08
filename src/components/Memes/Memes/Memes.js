@@ -46,7 +46,6 @@ const Memes = (props) => {
             />
           ))}
         </Card>
-        ;
       </div>
     );
   }

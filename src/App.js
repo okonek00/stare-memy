@@ -7,7 +7,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Footer from "./components/Footer/footer";
 
 import DUMMY_MEMES from "./components/Memes/DUMMY_MEMES";
-import Logo from "./components/Logo";
+import Logo from "./components/Logo/Logo";
 
 import "./App.css";
 
@@ -41,23 +41,33 @@ const App = () => {
         <NavLink to="/">
           <Logo />
         </NavLink>
-        <ul className="NavBar">
-          <li>
-            <NavLink className="Link" activeClassName="selected" to="/natopie">
-              NA TOPIE
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="Link" activeClassName="selected" to="/regular">
-              BEZ SZAŁU
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="Link" activeClassName="selected" to="/new">
-              DODAJ STAREGO MEMA
-            </NavLink>
-          </li>
-        </ul>
+        <div className="MenuBar">
+          <ul className="NavBar">
+            <li>
+              <NavLink
+                className="Link"
+                activeClassName="selected"
+                to="/natopie"
+              >
+                NA TOPIE
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="Link"
+                activeClassName="selected"
+                to="/regular"
+              >
+                BEZ SZAŁU
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="Link" activeClassName="selected" to="/new">
+                DODAJ STAREGO MEMA
+              </NavLink>
+            </li>
+          </ul>
+        </div>
 
         <Switch>
           <Route exact path="/">

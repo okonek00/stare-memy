@@ -1,9 +1,11 @@
 import React from "react";
-import logoo from "../images/logo.png";
+import logoo from "../../images/logo.png";
+
+import "./Logo.css";
 
 const Logo = () => {
   return (
-    <div>
+    <div className="image">
       <img src={logoo} alt="" />
     </div>
   );

@@ -8,7 +8,7 @@ const Footer = () => {
       <div>
         <h2>&copy;WSB Wroclaw 2021/Rafał Okonski</h2>
       </div>
-      <div class="media">
+      <div className="media">
         <a href="https://www.facebook.com">
           <img
             src="https://img.icons8.com/doodle/48/000000/facebook-new.png"

@@ -14,46 +14,23 @@ const Memes = (props) => {
     setFilteredYear(selectedYear);
   };
 
-  const naTopie = props.items.filter((meme) => {
+  const filteredMemesByDate = props.items.filter((meme) => {
     return (
-      meme.date.getFullYear().toString() === filteredYear &&
-      meme.upvotes - meme.downvotes > -1
+      meme.date.getFullYear().toString() === filteredYear || filteredYear === 'all'
     );
   });
 
-  const bezSzalu = props.items.filter((meme) => {
+  const filteredMemesByDateAndType = filteredMemesByDate.filter((meme) => {
     return (
-      meme.date.getFullYear().toString() === filteredYear &&
-      meme.upvotes - meme.downvotes <= -1
+      (isHot && meme.upvotes - meme.downvotes > -1) || (!isHot && meme.upvotes - meme.downvotes <= -1)
     );
   });
 
-  if (isHot) {
-    return (
-      <div>
-        <Card className="memes">
-          <MemeFilter selected={naTopie} onChangeFilter={filterChangeHandler} />
-          {naTopie.map((meme) => (
-            <MemeItem
-              key={meme.id}
-              id={meme.id}
-              title={meme.title}
-              img={meme.img}
-              date={meme.date}
-              upvotes={meme.upvotes}
-              downvotes={meme.downvotes}
-              updateMemeVotes={props.updateMemeVotes}
-            />
-          ))}
-        </Card>
-      </div>
-    );
-  }
-    return (
+  return (
     <div>
       <Card className="memes">
-        <MemeFilter selected={bezSzalu} onChangeFilter={filterChangeHandler} />
-        {bezSzalu.map((meme) => (
+        <MemeFilter onChangeFilter={filterChangeHandler} />
+        {filteredMemesByDateAndType.map((meme) => (
           <MemeItem
             key={meme.id}
             id={meme.id}
@@ -67,5 +44,6 @@ const Memes = (props) => {
         ))}
       </Card>
     </div>
-  )};
+  );
+};
 export default Memes;

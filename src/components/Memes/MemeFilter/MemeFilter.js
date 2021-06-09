@@ -11,8 +11,8 @@ const MemeFilter = (props) => {
     <div className="meme-filter">
       <div className="meme-filter__control">
         <label>Filtruj po dacie dodania</label>
-        <select value={props.selected} onChange={dropdownChangeHandler}>
-          <option _any>Wszystko</option>
+        <select onChange={dropdownChangeHandler}>
+          <option value="all">Wszystko</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
         </select>

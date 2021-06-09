@@ -1,0 +1,46 @@
+.MenuBar {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-flow: column;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 60rem;
+  max-width: 95%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li .Link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li .Link:hover {
+  background-color: cornflowerblue;
+}
+
+li .selected {
+  background-color: rgb(60, 88, 141);
+}
+
+/* .active,
+  .active:hover {
+    background-color: rgb(60, 88, 141);
+  } */

@@ -14,15 +14,17 @@ const Memes = (props) => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredMemesByDate = props.items.filter((meme) => {
+  const filteredMemesByDate = props.stuff.filter((meme) => {
     return (
-      meme.date.getFullYear().toString() === filteredYear || filteredYear === 'all'
+      meme.date.getFullYear().toString() === filteredYear ||
+      filteredYear === "all"
     );
   });
 
   const filteredMemesByDateAndType = filteredMemesByDate.filter((meme) => {
     return (
-      (isHot && meme.upvotes - meme.downvotes > -1) || (!isHot && meme.upvotes - meme.downvotes <= -1)
+      (isHot && meme.upvotes - meme.downvotes > -1) ||
+      (!isHot && meme.upvotes - meme.downvotes <= -1)
     );
   });
 

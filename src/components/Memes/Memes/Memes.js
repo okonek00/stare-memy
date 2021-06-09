@@ -6,7 +6,7 @@ import "./Memes.css";
 import MemeFilter from "../MemeFilter/MemeFilter";
 
 const Memes = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2021");
+  const [filteredYear, setFilteredYear] = useState("all");
 
   const isHot = props.isHot;
 

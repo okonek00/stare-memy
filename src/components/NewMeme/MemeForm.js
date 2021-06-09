@@ -14,20 +14,21 @@ const MemeForm = (props) => {
   const [url, setUrl] = useState("");
 
   const uploadImage = () => {
-    const data = new FormData();
-    data.append("file", image);
-    data.append("upload_preset", "starememy");
-    data.append("cloud_name", "starememy");
+    const newimage = new FormData();
+    newimage.append("file", image);
+    newimage.append("upload_preset", "starememy");
+    newimage.append("cloud_name", "starememy");
     fetch("https://api.cloudinary.com/v1_1/starememy/image/upload", {
       method: "POST",
-      body: data,
+      body: newimage,
     })
       .then((resp) => resp.json())
-      .then((data) => {
-        setUrl(data.url);
-        submitHandler(data.url)
+      .then((newimage) => {
+        setUrl(newimage.url);
+        submitHandler(newimage.url)
       })
       .catch((err) => console.log(err));
+      console.log(url);
   };
 
   const [enteredDate, setEnteredDate] = useState("");
@@ -46,7 +47,6 @@ const MemeForm = (props) => {
 
     props.onSaveMemeData(memeData);
     setEnteredTitle("");
-    // setUrl("");
     setEnteredDate("");
   };
 
@@ -83,9 +83,10 @@ const MemeForm = (props) => {
       <div className="new-meme_actions">
         <button type="submit" onClick={uploadImage}>Dodaj Meme</button>
       </div>
-      <div>
+      {/* <div>
         <img src={url} alt="" />
-      </div>
+      </div> */}
+
     </section>
   );
 };

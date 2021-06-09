@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/stare-memy/static/css/main.160f57fa.chunk.css",
-    "main.js": "/stare-memy/static/js/main.c5021505.chunk.js",
-    "main.js.map": "/stare-memy/static/js/main.c5021505.chunk.js.map",
+    "main.js": "/stare-memy/static/js/main.bb6d331b.chunk.js",
+    "main.js.map": "/stare-memy/static/js/main.bb6d331b.chunk.js.map",
     "runtime-main.js": "/stare-memy/static/js/runtime-main.3a003b3b.js",
     "runtime-main.js.map": "/stare-memy/static/js/runtime-main.3a003b3b.js.map",
     "static/js/2.c89eaa0d.chunk.js": "/stare-memy/static/js/2.c89eaa0d.chunk.js",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.3a003b3b.js",
     "static/js/2.c89eaa0d.chunk.js",
     "static/css/main.160f57fa.chunk.css",
-    "static/js/main.c5021505.chunk.js"
+    "static/js/main.bb6d331b.chunk.js"
   ]
 }

@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/stare-memy/static/css/main.34482629.chunk.css",
-    "main.js": "/stare-memy/static/js/main.a7576c68.chunk.js",
-    "main.js.map": "/stare-memy/static/js/main.a7576c68.chunk.js.map",
-    "runtime-main.js": "/stare-memy/static/js/runtime-main.a26c3913.js",
-    "runtime-main.js.map": "/stare-memy/static/js/runtime-main.a26c3913.js.map",
-    "static/js/2.567bb2e3.chunk.js": "/stare-memy/static/js/2.567bb2e3.chunk.js",
-    "static/js/2.567bb2e3.chunk.js.map": "/stare-memy/static/js/2.567bb2e3.chunk.js.map",
-    "static/js/3.b1026950.chunk.js": "/stare-memy/static/js/3.b1026950.chunk.js",
-    "static/js/3.b1026950.chunk.js.map": "/stare-memy/static/js/3.b1026950.chunk.js.map",
+    "main.css": "/stare-memy/static/css/main.160f57fa.chunk.css",
+    "main.js": "/stare-memy/static/js/main.c5021505.chunk.js",
+    "main.js.map": "/stare-memy/static/js/main.c5021505.chunk.js.map",
+    "runtime-main.js": "/stare-memy/static/js/runtime-main.3a003b3b.js",
+    "runtime-main.js.map": "/stare-memy/static/js/runtime-main.3a003b3b.js.map",
+    "static/js/2.c89eaa0d.chunk.js": "/stare-memy/static/js/2.c89eaa0d.chunk.js",
+    "static/js/2.c89eaa0d.chunk.js.map": "/stare-memy/static/js/2.c89eaa0d.chunk.js.map",
+    "static/js/3.f50d1230.chunk.js": "/stare-memy/static/js/3.f50d1230.chunk.js",
+    "static/js/3.f50d1230.chunk.js.map": "/stare-memy/static/js/3.f50d1230.chunk.js.map",
     "index.html": "/stare-memy/index.html",
-    "static/css/main.34482629.chunk.css.map": "/stare-memy/static/css/main.34482629.chunk.css.map",
-    "static/js/2.567bb2e3.chunk.js.LICENSE.txt": "/stare-memy/static/js/2.567bb2e3.chunk.js.LICENSE.txt",
+    "static/css/main.160f57fa.chunk.css.map": "/stare-memy/static/css/main.160f57fa.chunk.css.map",
+    "static/js/2.c89eaa0d.chunk.js.LICENSE.txt": "/stare-memy/static/js/2.c89eaa0d.chunk.js.LICENSE.txt",
     "static/media/bob.eeca13b1.jpg": "/stare-memy/static/media/bob.eeca13b1.jpg",
     "static/media/foreveralone.51b2cc25.jpg": "/stare-memy/static/media/foreveralone.51b2cc25.jpg",
     "static/media/grumpy.f9a0523c.jpg": "/stare-memy/static/media/grumpy.f9a0523c.jpg",
@@ -24,9 +24,9 @@
     "static/media/zakupy.29fc14e6.jpg": "/stare-memy/static/media/zakupy.29fc14e6.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a26c3913.js",
-    "static/js/2.567bb2e3.chunk.js",
-    "static/css/main.34482629.chunk.css",
-    "static/js/main.a7576c68.chunk.js"
+    "static/js/runtime-main.3a003b3b.js",
+    "static/js/2.c89eaa0d.chunk.js",
+    "static/css/main.160f57fa.chunk.css",
+    "static/js/main.c5021505.chunk.js"
   ]
 }

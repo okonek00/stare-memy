@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-
 import "./MemeForm.css";
-
 
 const MemeForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -25,10 +23,10 @@ const MemeForm = (props) => {
       .then((resp) => resp.json())
       .then((newimage) => {
         setUrl(newimage.url);
-        submitHandler(newimage.url)
+        submitHandler(newimage.url);
       })
       .catch((err) => console.log(err));
-      console.log(url);
+    console.log(url);
   };
 
   const [enteredDate, setEnteredDate] = useState("");
@@ -81,12 +79,10 @@ const MemeForm = (props) => {
         </div>
       </div>
       <div className="new-meme_actions">
-        <button type="submit" onClick={uploadImage}>Dodaj Meme</button>
+        <button type="submit" onClick={uploadImage}>
+          Dodaj Meme
+        </button>
       </div>
-      {/* <div>
-        <img src={url} alt="" />
-      </div> */}
-
     </section>
   );
 };

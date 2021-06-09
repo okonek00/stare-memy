@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Switch, Route, NavLink, Redirect } from "react-router-dom";
 
 import Logo from "../Logo/Logo";
 import Memes from "../Memes/Memes/Memes";
@@ -35,6 +35,9 @@ const NavBar = (props) => {
       </div>
 
       <Switch>
+        <Route exact path="/stare-memy">
+            <Redirect to="/"/>
+        </Route>
         <Route exact path="/">
           <Memes
             stuff={props.items}

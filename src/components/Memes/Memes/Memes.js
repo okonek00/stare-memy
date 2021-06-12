@@ -21,6 +21,12 @@ const Memes = (props) => {
     );
   });
 
+  const memeAddYear = props.stuff.map((year) => {
+    return (
+      year.date.getFullYear()
+    )
+  })
+
   const filteredMemesByDateAndType = filteredMemesByDate.filter((meme) => {
     return (
       (isHot && meme.upvotes - meme.downvotes > -1) ||
@@ -31,7 +37,11 @@ const Memes = (props) => {
   return (
     <div>
       <Card className="memes">
-        <MemeFilter onChangeFilter={filterChangeHandler} />
+        <MemeFilter 
+        onChangeFilter={filterChangeHandler}
+        date2={memeAddYear}
+        />
+
         {filteredMemesByDateAndType.map((meme) => (
           <MemeItem
             key={meme.id}
@@ -48,4 +58,5 @@ const Memes = (props) => {
     </div>
   );
 };
+
 export default Memes;

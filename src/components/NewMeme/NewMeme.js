@@ -5,7 +5,7 @@ import MemeForm from "./MemeForm";
 import "./NewMeme.css";
 
 const NewMeme = (props) => {
-  const shortid = require('shortid');
+  const shortid = require("shortid");
 
   const saveMemeDataHandler = (enteredMemeData) => {
     const memeData = {
@@ -13,13 +13,11 @@ const NewMeme = (props) => {
       id: shortid.generate(),
     };
     props.onAddMeme(memeData);
-    
   };
   return (
     <div className="new-meme">
       <MemeForm onSaveMemeData={saveMemeDataHandler} />
     </div>
-    
   );
 };
 

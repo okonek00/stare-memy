@@ -14,7 +14,7 @@ Project is created with: react@17.0.2
 	
 ## Setup
 To run this project, install it locally using npm:
-* $ cd../stare-memy
+* $ cd.. /stare-memy
 * $ npm install
 * $ npm start
 

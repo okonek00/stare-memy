@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import './LikeDislike2.css'
+import "./LikeDislike2.css";
 
 const LikeDislike2 = (props) => {
   const [status] = useState(null);

@@ -22,10 +22,8 @@ const Memes = (props) => {
   });
 
   const memeAddYear = props.stuff.map((year) => {
-    return (
-      year.date.getFullYear().toString()
-    )
-  })
+    return year.date.getFullYear().toString();
+  });
 
   const filteredMemesByDateAndType = filteredMemesByDate.filter((meme) => {
     return (
@@ -37,10 +35,7 @@ const Memes = (props) => {
   return (
     <div>
       <Card className="memes">
-        <MemeFilter 
-        onChangeFilter={filterChangeHandler}
-        date2={memeAddYear}
-        />
+        <MemeFilter onChangeFilter={filterChangeHandler} date2={memeAddYear} />
 
         {filteredMemesByDateAndType.map((meme) => (
           <MemeItem

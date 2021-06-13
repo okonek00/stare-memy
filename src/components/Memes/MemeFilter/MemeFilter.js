@@ -7,12 +7,7 @@ const MemeFilter = (props) => {
     props.onChangeFilter(event.target.value);
   };
 
-
   const uniqueDates = Array.from(new Set(props.date2));
-
-
-  console.log(props.date2);
-  console.log(uniqueDates);
 
   return (
     <div className="meme-filter">
@@ -20,7 +15,9 @@ const MemeFilter = (props) => {
         <label>Filtruj po dacie dodania</label>
         <select onChange={dropdownChangeHandler}>
           <option value="all">Wszystko</option>
-          {uniqueDates.map((x)=> <option key={x}>{x}</option>)}
+          {uniqueDates.map((x) => (
+            <option key={x}>{x}</option>
+          ))}
         </select>
       </div>
     </div>

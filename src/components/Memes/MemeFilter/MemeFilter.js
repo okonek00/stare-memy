@@ -20,7 +20,7 @@ const MemeFilter = (props) => {
         <label>Filtruj po dacie dodania</label>
         <select onChange={dropdownChangeHandler}>
           <option value="all">Wszystko</option>
-          {uniqueDates.map((x,y)=> <option key={x}>{y}</option>)}
+          {uniqueDates.map((x)=> <option key={x}>{x}</option>)}
         </select>
       </div>
     </div>

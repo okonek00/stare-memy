@@ -23,7 +23,7 @@ const Memes = (props) => {
 
   const memeAddYear = props.stuff.map((year) => {
     return (
-      year.date.getFullYear()
+      year.date.getFullYear().toString()
     )
   })
 
